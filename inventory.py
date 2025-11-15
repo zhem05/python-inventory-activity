@@ -15,25 +15,25 @@ def Inventory():
                 item_name = input("Enter item name: ")
 
                 if not item_name.strip():
-                    print("Item name cannot be empty.")
+                    print("Name can't be empty")
                     continue
                 
                 if item_name in items:
-                    print(f"Item {item_name} already exists in inventory.")
+                    print(f"Item {item_name} already exists")
                     continue
 
                 try:
                     price = float(input("Enter price: "))
 
                     if price < 0:
-                        print("Price cannot be negative.")
+                        print("Price must be positive")
                         continue
                     items.append(item_name)
                     item_prices[item_name] = price
 
                     print("Item added successfully!")
                 except ValueError:
-                    print("Invalid price. Please enter a numeric value.")
+                    print("Invalid! Enter a number for price")
                     continue
             
             elif choice == 2:
@@ -47,13 +47,13 @@ def Inventory():
                     new_price = float(input("Enter new price: "))
 
                     if new_price < 0:
-                        print("Price cannot be negative.")
+                        print("Price must be positive")
                         continue
 
                     item_prices[item_name] = new_price
                     print("Price updated successfully!")
                 except ValueError:
-                    print("Invalid price. Please enter a numeric value.")
+                    print("Invalid! Enter a number for price")
                     continue
             elif choice == 3:
                 print("Exiting system...")
